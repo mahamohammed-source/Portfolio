@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="robots" content="noindex, nofollow">
   <meta charset="utf-8">
   <title>Bundled Page</title>
   <style>
@@ -306,7 +307,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const headOpen = template.match(/<head[^>]*>/i);
     if (headOpen) {
       const i = headOpen.index + headOpen[0].length;
-      template = template.slice(0, i) + resourceScript + template.slice(i);
+      template = template.slice(0, i) + '<meta name="robots" content="noindex, nofollow">' + resourceScript + template.slice(i);
     }
 
     // Parse the template and swap the root element. Scripts inserted via
